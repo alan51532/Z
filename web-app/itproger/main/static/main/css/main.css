@@ -1,0 +1,214 @@
+body {
+    background:  #181818;
+
+}
+
+
+
+
+aside {
+    float: left;
+    background: #181818;
+    width: 18%;
+    padding: 2,5%;
+    height: 150vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+
+}
+aside img {
+    width: 20px;
+    float: left;
+
+}
+aside .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+aside h3 {
+   color: #fff;
+   margin-top: 50px;
+   font-size: 28px;
+}
+
+aside ul {list-style: none}
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: all .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.features {
+    margin-top: 10px;
+    text-align: center;
+    width: 75%;
+}
+main {
+    background-color:  #181818;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Чтобы блок занимал всю высоту контейнера */
+}
+
+main .features h1 {font-size: 20px;}
+
+main .features p {max-width: 1000px; margin: 28px auto;font-size: 18px;}
+main {
+    background-color:  #181818;/*вый цвет для блока mail */
+    padding: 20px;
+}
+
+.button-container {
+  position: relative; /* Абсолютное позиционирование относительно родительского элемента */
+  top:  77%; /* Размещение кнопки на вертикальном центре */
+  left: 100%; /* Размещение кнопки на горизонтальном центре */
+  transform: translate(-32%, -75%); /* Центрирование кнопки */
+   /*width: 80 px; /* Пример задания ширины кнопки */
+
+}
+
+.button-container2 {
+  position: relative; /* Абсолютное  позиционирование относительно родительского элемента */
+  top: 80%; /* Размещение кнопки на вертикальном центре */
+  left: -1%; /* Размещение кнопки на горизонтальном центре */
+  transform: translate(35%, -880%); /* Центрирование кнопки */
+   /*width: 6 px; /* Пример задания ширины кнопки */
+
+}
+
+
+.button-container,
+.button-container2 {
+  opacity: 0;
+
+  /* Остальные стили оставляем без изменений */
+  /*visibility: hidden; /* Делаем кнопки невидимыми */
+  /* или можно использовать 'opacity: 0;' для того же эффекта */
+}
+
+
+.button-container button {
+    width: 40px;   /* Кнопка займет всю ширину контейнера */
+    height: 30px;  /* Кнопка займет всю высоту контейнера */
+
+}
+.button-container2 button{
+    width: 40px;   /* Кнопка займет всю ширину контейнера */
+    height: 50px;  /* Кнопка займет всю высоту контейнера */
+}
+
+
+
+
+
+
+main img {
+    max-width: 200px;
+    float: left;
+}
+
+
+
+.indicator-col {
+    display: flex;
+    justify-content: center; /* Центрирование содержимого по горизонтали */
+    align-items: center;     /* Центрирование содержимого по вертикали */
+    height: 200%;            /* Занимает всю высоту родительского контейнера */
+    margin-left: -27px; /* Положительное значение для сдвига вправо */
+    margin-top: -247px; /* Отрицательное значение для сдвига вверх */
+}
+
+/* Сдвиг по горизонтали и вертикали */
+.indicator-col img {
+    display: block;
+    margin-left: 35px; /* Положительное значение для сдвига вправо */
+    margin-top: 0px; /* Отрицательное значение для сдвига вверх */
+}
+
+.img-container {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;     /* Центрирование по вертикали (если нужно) */
+}
+
+
+.button-container3 {
+    position: relative; /* Абсолютное позиционирование относительно родительского элемента */
+    top: 70%; /* Размещение кнопки на вертикальном центре */
+    left: 2%; /* Размещение кнопки на горизонтальном центре */
+    transform: translate(0%, -350%); /* Центрирование кнопки */
+    opacity: 1; /* Обратите внимание, что значение opacity должно быть от 0 до 1 */
+}
+.button-container3 {
+  opacity: 1;
+
+
+}
+
+.button-container3 button {
+    height: 60px; /* Задайте желаемую высоту кнопок */
+    width: 30%; /* Задайте ширину кнопок, если необходимо */
+    margin: 0 10px; /* Отступы между кнопками */
+    background-color: #00BFFF; /* Синий цвет кнопок */
+    border: none; /* Убираем рамку */
+    color: white; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    border: none; /* Убираем рамку */
+}
+
+
+.button-container4 {
+    display: flex; /* Используем flexbox для выстраивания кнопок в ряд */
+    justify-content: space-between; /* Распределяем кнопки по всей ширине контейнера */
+    margin-top: 20px; /* Отступ сверху для отделения от предыдущих элементов */
+}
+
+.button-container4 button {
+
+
+
+    flex: 1; /* Каждая кнопка займет равную ширину */
+    margin: 0 60px; /* Отступы между кнопками */
+    height: 100px; /* Высота кнопок */
+    background-color: #00BFFF; /* Синий цвет кнопок */
+    border: none; /* Убираем рамку */
+    color: white; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    margin-top: 20px; /* Отступ сверху для отделения от изображения */
+    margin-top: -140px; /* Увеличьте это значение, чтобы опустить кнопки ниже */
+
+}
+
+ .image-row5 {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;     /* Центрирование по вертикали (если нужно) */
+    height: 350px;          /* Установите высоту, если это необходимо */
+}
+
+.f5 {
+    margin-top: 10px;
+    text-align: center;
+    width: 75%;
+}

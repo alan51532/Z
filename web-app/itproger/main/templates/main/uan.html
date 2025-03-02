@@ -1,0 +1,785 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="features" id="featuresText">
+    <p>Вы президент Российской Федерации. Майдан 2014 года на Украине перерос в необратимые и очевидные события. Вам необходимо принять стратегическое решение по событиям в Киеве.</p>
+</div>
+
+<div class="img-container">
+    <img id="mainImage" src="{% static 'main/img/333.png' %}" alt="Image 1" style="max-width: 200%; height: auto;">
+</div>
+
+<div class="button-container4">
+
+    <button id="1" class="btn btn-primary" onclick="id1()">Ввести войска ОДКБ для поддержания конституционного порядка на Украине.</button>
+    <button id="2" class="btn btn-primary" onclick="window.location.href='{% url 'uan2' %}'">Признать переворот и отказаться от любой конфронтации с Украиной.</button>
+    <button id="3" class="btn btn-primary" onclick="id3000()"> Третий вариант решения </button>
+</div>
+<div class="features" id="featuresText2">
+    <p></p>
+</div>
+<!-- Аудиопроигрыватель -->
+<audio id="backgroundAudio" src="{% static 'main/audio/aud1.mp3' %}" autoplay loop></audio>
+<audio id="backgroundAudio2" src="{% static 'main/audio/tolpa13.mp3' %}" autoplay></audio>
+<audio id="Vert" src="{% static 'main/audio/Vert.mp3' %}"></audio>
+<audio id="backgroundAudio3" src="{% static 'main/audio/re.mp3' %}"></audio>
+<audio id="backgroundAudioKN" src="{% static 'main/audio/KN2.mp3' %}"></audio>
+<audio id="backgroundAudio22BR" src="{% static 'main/audio/22BR.mp3' %}"></audio>
+<audio id="backgroundAudioPolsk2" src="{% static 'main/audio/Polsk2.mp3' %}"></audio>
+<audio id="backgroundAudioAVIA" src="{% static 'main/audio/AVIA.mp3' %}"></audio>
+<audio id="backgroundAudioS123" src="{% static 'main/audio/S123.mp3' %}"></audio>
+<audio id="backgroundAudioSS123" src="{% static 'main/audio/SS123.mp3' %}"></audio>
+<audio id="backgroundAudioMex" src="{% static 'main/audio/Mex.mp3' %}"></audio>
+<audio id="backgroundAudioSuper" src="{% static 'main/audio/Super.mp3' %}"></audio>
+<audio id="backgroundAudioNat" src="{% static 'main/audio/Nat.mp3' %}"></audio>
+<audio id="backgroundAudioAt20" src="{% static 'main/audio/At20.mp3' %}"></audio>
+<audio id="backgroundAudioslava" src="{% static 'main/audio/slava.mp3' %}"></audio>
+<audio id="backgroundAudioGorn" src="{% static 'main/audio/Gorn.mp3' %}"></audio>
+<audio id="backgroundAudioC12" src="{% static 'main/audio/C12.mp3' %}"></audio>
+<audio id="backgroundAudioSirena" src="{% static 'main/audio/Sirena.mp3' %}"></audio>
+<audio id="backgroundAudiomix24" src="{% static 'main/audio/mix24.mp3' %}"></audio>
+<audio id="backgroundAudioput" src="{% static 'main/audio/put.mp3' %}"></audio>
+<audio id="background032" src="{% static 'main/audio/032.mp3' %}"></audio>
+<script>
+function playAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    if (audio) {
+        audio.currentTime = 0; // Сбрасываем время воспроизведения
+        audio.play().catch(error => {
+            console.log('Ошибка воспроизведения:', error);
+        });
+    } else {
+        console.log('Аудиофайл не найден:', audioId);
+    }
+}
+
+function stopAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    if (audio) {
+        audio.pause(); // Останавливаем воспроизведение
+        audio.currentTime = 0; // Сбрасываем время воспроизведения
+    } else {
+        console.log('Аудиофайл не найден:', audioId);
+    }
+}
+
+function id1() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudio2');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioS123');
+    playAudio('backgroundAudioSS123');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> На "Ч"+ 24 часа: четыре группировки МО РФ перешли госграницу и без боя вышли в запланированные боевой задачей районы. ВСУ деморализовано, но отряды Самообороны, футбольных ультрас и Правого Сектора заняли оборону в Киеве, Харькове и Запорожье.</p>';
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    button1.innerHTML = 'Начать штурм Киева, Запорожья и Харькова, продвигаться к Одессе.';
+    button2.innerHTML = 'Потребовать распустить незаконные силовые формирования и сформировать Правительство Национального согласия';
+    button3.innerHTML = 'Кнопка 3: Временный текст';
+
+    button3.style.display = 'none'; // Скрыть кнопку 3
+    button1.onclick = id2;
+    button2.onclick = function() {
+    window.location.href = "{% url 'uan3' %}";
+};
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/V3.png' %}"; // Замените на путь к новому изображению
+}
+
+function id2() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioS123');
+    stopAudio('backgroundAudioSS123');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudio22BR');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>На "Ч"+48 часов: 22 и 10 бригады спецназа, быстро сбивая заслоны Сотен Майдана и Правого Сектора, вышли в пригороды Киева. Одесская и Донецкие группировки МО РФ, не рассчитанные на глубокий прорыв, остановили продвижение. 46 МСД и 2 ОБР СпН, пинками разгоняя несогласных, зашли в Харьков. Войска НАТО начали движение к границам Украины.</p>
+    <p></p>
+`;
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    button1.innerHTML = 'Не вступать в переговоры. Огонь на поражение';
+    button2.innerHTML = ' Повторно предложить перейти к переговорам';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk3.png' %}";
+    button1.onclick = id3;
+}
+function id3() {
+    // Воспроизводим звук нажатия кнопки
+     stopAudio('backgroundAudio22BR');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioNat');
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p> НА "Ч"+5 суток: Русский Спецназ ворвался на Крещатик. Донецкие БТГ после усиления 7 ДШБ ЮФО продолжили занимать ДНР. 61 бригада морпехов вошла в Одесскую область. Объявлена подготовка к референдуму о вхождении Восточной Украины в состав РФ. НАТО выдвинуло ультиматум: 24 часа на вывод Русской армии из Украины.</p>
+    <p></p>
+`;
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+    button3.style.display = 'none'; // Скрыть кнопку 3
+
+    button1.innerHTML = 'Игнорировать ультиматум НАТО. Продолжить зачистку Востока Украины и идти на Одессу';
+    button2.innerHTML = 'Последний раз предложить переговоры';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk5.png' %}";
+    button1.onclick = id4;
+    //button1.onclick = id3;
+}
+function id4() {
+    // Воспроизводим звук нажатия кнопки
+     stopAudio('backgroundAudioNat');
+     playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+     playAudio('backgroundAudioAt20');
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p> Колонна передовой Крымской группировки на подходе к Одессе уничтожена звеном F-16 НАТО с Польши</p>
+
+`;
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+    button1.innerHTML = 'Нанести удар по Польской авиабазе Жешув. Продолжить операцию на Украине';
+
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk6.jpg' %}";
+    button1.onclick = id5;
+}
+function id5() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioAt20');
+    playAudio('backgroundAudioPolsk2');
+    playAudio('backgroundAudioKN2'); // Звук нажатия кнопки
+
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p> Крейсер "Москва" вынес термобарическими "Вулканами П-1000" авиабазу Жешув в Польше.  <br>НАТО объявило о подготовке к введению в действие 5 статьи устава</p>
+`;
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('3');
+    const button3 = document.getElementById('3');
+
+    button1.innerHTML = 'Объявить "бесполётную" зону над всей Украиной';
+    button2.innerHTML = 'Новый текст кнопки 2';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk7.jpg' %}";
+    button1.onclick = id6;
+}
+
+function id6() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioPolsk2');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioSuper');
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>  Игнорируя объявленную безполетную зону, 400 самолетов НАТО и 100 Томагавков ВМФ США из Средиземного и Атлантики ударили по русским группировкам в ДНР и Одесской обл.</p>
+
+`;
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('3');
+    const button3 = document.getElementById('3');
+
+    button1.innerHTML = ' Ударить по флоту США и авиабазам НАТО';
+    button2.innerHTML = 'Новый текст кнопки 2';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk8.png' %}";
+    button1.onclick = id7;
+}
+
+function id7() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioSuper');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioAVIA');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Авианосец "Гарри Трумен" 7 флота США уничтожен ракетами X-22 бомбардировщиков из 16 САД ВВС РФ. 6 авиабаз НАТО в Европе стерты фугасными "Базальтами" и "Вулканами" атомного крейсера "Адмирал Лазарев" находящегося в Средиземном море .</p>
+
+`;
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('3');
+    const button3 = document.getElementById('3');
+
+    button1.innerHTML = 'Начать готовить войска для атаки на сухопутную группировку НАТО на Украине';
+    button2.innerHTML = 'Новый текст кнопки 2';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk9.png' %}";
+    button1.onclick = id8;
+}
+
+
+function id8() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioAVIA');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+     // Загружаем аудиофайл для последующего воспроизведения
+    const audioSlava = document.getElementById('backgroundAudioslava');
+    audioSlava.load(); // Начинаем загрузку аудиофайла
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>300000 тысяч солдат НАТО сформировали ударную группировку по Днепру. ВВС НАТО сосредоточили авиагруппы для нанесения удара. Корабли США, Англии, Германии и Францией подошли на дистанцию удара по РФ.</p>
+    `;
+    playAudio('backgroundAudioS123');
+    playAudio('backgroundAudioSS123');
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2'); // Используем button2
+    const button3 = document.getElementById('3'); // Используем button3
+
+    button1.innerHTML = 'Игнорировать многократный перевес противника. Атаковать войска НАТО';
+    button2.innerHTML = 'Новый текст кнопки 2';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk10.png' %}";
+    button1.onclick = id9;
+}
+
+function id9() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioS123');
+    stopAudio('backgroundAudioSS123');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioAt20');
+    playAudio('backgroundAudioslava');
+
+
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Запад ударил первым....Используя спутники, НАТО сумело выйти на дистанцию удара раньше, в результате уничтожены более 20 ударных кораблей Русского флота в Средиземном и Черном Море, потоплены крейсера Петр Великий, Кузнецов, Слава, Керчь... Лишь подводный флот оказался невидим для западных систем разведки из Космоса.</p>
+    `;
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Скрываем кнопки 2 и 3
+    button2.style.display = 'none'; // Скрыть кнопку 2
+    button3.style.display = 'none'; // Скрыть кнопку 3
+
+
+    const button1 = document.getElementById('1');
+    button1.innerHTML = 'Но удар по сухопутной группировке Русской армии на Украине оказался еще страшнее...';
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk105.png' %}";
+
+    button1.onclick = id10;
+}
+function id10() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioslava');
+    stopAudio('backgroundAudioAt20');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioSuper');
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Мощнейший удар ракетами ATACMS США и английскими Storm Shadow усиленный управляемыми JDAM явились в своей эффективности полной неожиданностью для русских ПВО и нанесли мощнейший удар по штабам, логистике и подразделениям сухопутной группировке русских войск на Украине, в результате чего Русские оставили Киев.</p>
+    `;
+     const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Скрываем кнопки 2 и 3
+    button2.style.display = 'none'; // Скрыть кнопку 2
+    button3.style.display = 'none'; // Скрыть кнопку 3
+
+
+    const button1 = document.getElementById('1');
+    button1.innerHTML = 'А через час после удара ...';
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk11.png' %}";
+
+    button1.onclick = id12;
+}
+
+function id12() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioSuper');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioGorn');
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>101 Воздушно Десантная Дивизия США перешла в стремительное наступление в бреши русского фронта с намерением выйти к Ростову-на-Дону.</p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Любой ценой отразить наступление НАТО';
+    button2.innerHTML = 'Выйти по экстренной связи и предложить переговоры';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Возвращаем видимость кнопок 2 и 3
+    button2.style.display = 'block'; // Сделать кнопку 2 видимой
+    //button3.style.display = 'block'; // Сделать кнопку 3 видимой
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk12.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id13;
+    button2.onclick = id21;
+}
+
+function id13() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioGorn');
+    playAudio('backgroundAudioC12');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Ракетный крейсер 1164 «Атлант» с пирса Новороссийска залпом из 12 Вулканов П-1000 со спец. боеприпасом уничтожил 101 дивизию ВДВ США на марше.</p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Предупредить США что мы только начали...';
+    button2.innerHTML = 'Подготовить РВСН для ударов по возможным объектам НАТО';
+
+    // Возвращаем видимость кнопок 1 и 2, скрываем кнопку 3
+    button1.style.display = 'block'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none'; // Сделать кнопку 2 видимой
+    button3.style.display = 'none';   // Скрыть кнопку 3
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk13.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id14; // Устанавливаем обработчик для кнопки 1
+    //button2.onclick = id14; // Устанавливаем обработчик для кнопки 2
+}
+
+function id14() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioC12');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+     playAudio('backgroundAudioSirena');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Пять Б-52 с авиабаз Германии и Бельгии нанесли удар ракетами AGM-86 ALCM с ядерными боеголовками по Новороссийску. Русское ПВО перехватило только часть ракет...</p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Выйти по экстренной связи и объявить капитуляцию';
+    button2.innerHTML = 'Привести в исполнение план ответа при ядерной агрессии.';
+    button3.innerHTML = 'Принять меры к ответным действиям'; // Пример текста для кнопки 3
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'block'; // Сделать кнопку 1 видимой
+    button2.style.display = 'block'; // Сделать кнопку 2 видимой
+    button3.style.display = 'None'; // Сделать кнопку 3 видимой
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk14.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id20; // Пример следующей функции
+    button2.onclick = id15; // Пример следующей функции
+    //button3.onclick = id15; // Пример следующей функции
+}
+
+function id15() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioSirena');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudiomix24');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Два "Борея" из Атлантики и "Тайфун" из Северного Ледовитого с помощью РСМ-56 нагрели восточное побережье США до 10000 С°, попутно уничтожив Центры Принятия решений и остатки тяжелой промышленности США, отбросив экономику США на сто лет назад в развитии  </p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Затем в дело вступили наземные русские комплексы со спец БЧ ...';
+    button2.innerHTML = 'Привести в исполнение план А Генштаба МО РФ при ядерной агрессии.';
+    button3.innerHTML = 'Принять меры к ответным действиям'; // Пример текста для кнопки 3
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'block'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk15.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id16; // Пример следующей функции
+    //button2.onclick = id15; // Пример следующей функции
+    //button3.onclick = id15; // Пример следующей функции
+}
+
+function id16() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudiomix24');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioSuper');
+
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Более 300 боеголовок мощностью 500 Килотонн вынесли всю европейскую военную инфраструктуру НАТО за 18 минут</p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Выступить по ТВ и объявить о неизбежном массированном термоядерном ударе по России.';
+    button2.innerHTML = 'Понадеяться на чуло.';
+    button3.innerHTML = 'Принять меры к ответным действиям'; // Пример текста для кнопки 3
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'none'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/W0.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id17; // Пример следующей функции
+    button2.onclick = id16; // Пример следующей функции
+    //button3.onclick = id15; // Пример следующей функции
+
+    setTimeout(() => {
+    id17();
+}, 14000); // 10000 миллисекунд = 10 секунд
+
+    // Подгрузка изображений W0, W1, W2, W3, W4 по очереди
+    setTimeout(() => {
+        mainImage.src = "{% static 'main/img/W0.png' %}";
+
+        setTimeout(() => {
+            mainImage.src = "{% static 'main/img/W1.png' %}";
+
+            setTimeout(() => {
+                mainImage.src = "{% static 'main/img/W2.png' %}";
+
+                setTimeout(() => {
+                    mainImage.src = "{% static 'main/img/W3.png' %}";
+
+                    setTimeout(() => {
+                        mainImage.src = "{% static 'main/img/W4.png' %}";
+                    }, 2800); // Задержка в 2 секунды для W4
+
+                }, 2400); // Задержка в 2 секунды для W3
+
+            }, 2000); // Задержка в 2 секунды для W2
+
+        }, 1500); // Задержка в 3 секунды для W1
+
+    }, 0); // Начинаем сразу для W0
+}
+
+
+
+
+function id17() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioS123');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('background032');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Система раннего предупреждения зафиксировала множественные пуски Minuteman III и Trident II из США, а так же, более двух сотен пусков Tomahawk от флотов НАТО находящихся за дистанцией поражения русскими ПКРК.</p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Подвести итоги Мировой Цивилизации и запустить 6000 боеголовок по странам НАТО.';
+    button2.innerHTML = 'Понадеяться на чудо.';
+    button3.innerHTML = 'Принять меры к ответным действиям'; // Пример текста для кнопки 3
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'block'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Vk17.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id18; // Пример следующей функции
+    //button2.onclick = id16; // Пример следующей функции
+    //button3.onclick = id15; // Пример следующей функции
+
+}
+
+function id18() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudio');
+    stopAudio('backgroundAudioput');
+    stopAudio('background032');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundAudioMex');
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+ <p> Сто лет спустя...  </p>
+
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'О проекте.';
+    button2.innerHTML = 'Понадеяться на чуло.';
+    button3.innerHTML = 'Принять меры к ответным действиям'; // Пример текста для кнопки 3
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'block'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/ISP.png' %}";
+
+
+
+
+    button1.onclick = id19; // Пример следующей функции
+    //button2.onclick = id16; // Пример следующей функции
+    //button3.onclick = id15; // Пример следующей функции
+}
+
+function id19() {
+
+
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    playAudio('backgroundkl1');
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+ <p> Для замечаний и предложений по сценариям тлг @X101. Для желающих поддержать проект и помочь с оплатой хостинга есть QR код для перевода на официальный счет ИП автора проекта. </p>
+
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'dsf.';
+    button2.innerHTML = 'fg.';
+    button3.innerHTML = 'tyj'; // Пример текста для кнопки 3
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'none'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+    button3.style.display = 'none';
+
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Ya1.png' %}";
+
+    // const featuresText2 = document.getElementById('featuresText2');
+    // featuresText2.querySelector('p').innerHTML = '';
+}
+
+function id20() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioSirena');
+    stopAudio('backgroundkl1');
+
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>По условиям капитуляции Россия передает ядерную триаду под контроль НАТО, выплачивает странам запада миллиард $ контрибуции, сокращает армию до 100 тысяч, а так же, передает США свой сегмент Северного Полюса.</p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'О Проекте СВО';
+    button2.innerHTML = 'Подготовить РВСН для ударов по возможным объектам НАТО';
+
+    // Возвращаем видимость кнопок 1 и 2, скрываем кнопку 3
+    button1.style.display = 'block'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none'; // Сделать кнопку 2 видимой
+    button3.style.display = 'none';   // Скрыть кнопку 3
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Bor.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id19; // Устанавливаем обработчик для кнопки 1
+    //button2.onclick = id14; // Устанавливаем обработчик для кнопки 2
+}
+
+    function id21() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioGorn');
+    stopAudio('backgroundAudioSuper');
+
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>По условиям мирного договора США выводят войска из Украины и РФ. Россия, в свою очередь, отказывается от военных флотов на Черном и Балтийском море, передает коды запуска МБР в США, выходит из ОПЕК и вводит контроль сената США над ГосДумой  .</p>`;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'О Проекте';
+    button2.innerHTML = 'Выйти по экстренной связи и предложить переговоры';
+    button3.innerHTML = 'Новый текст кнопки 3';
+
+    // Возвращаем видимость кнопок 2 и 3
+    button1.style.display = 'block'; // Сделать кнопку 2 видимой
+    button2.style.display = 'None';
+    button3.style.display = 'None';
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Zxf.png' %}";
+
+    // Устанавливаем обработчик для кнопки 1
+    button1.onclick = id19;
+    button2.onclick = id21;
+}
+
+        function id3000() {
+
+    stopAudio('backgroundAudio2');
+
+
+    playAudio('backgroundAudioKN');
+    playAudio('Vert');// Звук нажатия кнопки
+
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>Май 2014 года. Взять под контроль в интерсах нации стратегически важный плацдарм на территории государства нарушившего основы мирных соглашений и объявившего о намерении войти во враждебный военный союз</p>`;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    const button3 = document.getElementById('3');
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Эта ветка сценария еще пишется....';
+    button2.innerHTML = 'Выйти по экстренной связи и предложить переговоры';
+    button3.innerHTML = 'Эта ветка сценария еще пишется....';
+
+    // Возвращаем видимость кнопок 2 и 3
+    button1.style.display = 'none'; // Сделать кнопку 2 видимой
+    button2.style.display = 'None';
+    button3.style.display = 'block';
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Mi2.png' %}";
+
+
+
+}
+</script>
+{% endblock %}
