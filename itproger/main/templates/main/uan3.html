@@ -1,0 +1,757 @@
+{% extends 'main/layout.html' %}
+ {% load static %}
+
+{% block content %}
+
+<div class="features" id="featuresText">
+    <p>  Лидеры переворота согласилась на формирование Правительства Национального Согласия и проведения досрочных президентских выборов при условии вывода русских войск. </p>
+</div>
+
+<div class="img-container">
+    <img id="mainImage" src="{% static 'main/img/Lid.png' %}" alt="Image 1" style="max-width: 200%; height: auto;">
+
+</div>
+<div class="button-container4">
+    <button id="1" class="btn btn-primary" onclick="id111()"> Вывести русскую военную группировку. </button>
+    <button id="2" class="btn btn-primary" onclick="idz222()"> Оставить войска на территории Украины до проведения выборов.</button>
+
+
+</div>
+
+<div class="features" id="featuresText2">
+    <p></p>
+</div>
+<!-- Аудиопроигрыватель -->
+<audio id="backgroundAudioKN2" src="{% static 'main/audio/KN2.mp3' %}" autoplay></audio>
+<audio id="backgroundAudio" src="{% static 'main/audio/muz33.mp3' %}" autoplay loop></audio>
+<audio id="backgroundAudioAvtomat" src="{% static 'main/audio/Avtomat.mp3' %}"></audio>
+<audio id="backgroundAudioGRU" src="{% static 'main/audio/GRU.mp3' %}"></audio>
+<audio id="backgroundAudioAt20" src="{% static 'main/audio/At20.mp3' %}"></audio>
+<audio id="backgroundAudioSuper" src="{% static 'main/audio/Super.mp3' %}"></audio>
+<audio id="backgroundAudioUD14" src="{% static 'main/audio/UD14.mp3' %}"></audio>
+<audio id="backgroundkl1" src="{% static 'main/audio/kl1.mp3' %}"></audio>
+<audio id="backgroundRa22" src="{% static 'main/audio/Ra22.mp3' %}"></audio>
+<audio id="backgroundmix" src="{% static 'main/audio/mix.mp3' %}"></audio>
+<audio id="backgroundvzrx" src="{% static 'main/audio/vzrx.mp3' %}"></audio>
+<audio id="backgroundzel1" src="{% static 'main/audio/zel1.mp3' %}"></audio>
+<audio id="backgroundtolpa13" src="{% static 'main/audio/tolpa13.mp3' %}" ></audio>
+<audio id="backgroundSiz" src="{% static 'main/audio/Siz.mp3' %}" ></audio>
+
+
+<script>
+function playAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    if (audio) {
+        audio.currentTime = 0; // Сбрасываем время воспроизведения
+        audio.play().catch(error => {
+            console.log('Ошибка воспроизведения:', error);
+        });
+    } else {
+        console.log('Аудиофайл не найден:', audioId);
+    }
+}
+
+function stopAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    if (audio) {
+        audio.pause(); // Останавливаем воспроизведение
+        audio.currentTime = 0; // Сбрасываем время воспроизведения
+    } else {
+        console.log('Аудиофайл не найден:', audioId);
+    }
+}
+
+
+function id111() {
+    playAudio('backgroundAudioKN2');
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Победа прозападного представителя в условиях многолетней доминирующей пропаганды ЕС и отсутствия Российской  стала неизбежна.... .</p>';
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button2.style.display='none';
+
+    button1.innerHTML = 'Через месяц после инаугурации ....';
+    button2.innerHTML = 'Кн: Временный текст';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Poro.png' %}";
+
+    button1.onclick = id222;
+
+
+
+}
+function id222() {
+     playAudio('backgroundAudioKN2');
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Первым указом нового президента был: Немедленный вывод русского флота из Крыма и создание военно морской базы НАТО в Крыму.</p>';
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button2.style.display='none';
+
+    button1.innerHTML = 'Через два месяца ';
+    button2.innerHTML = 'Кн: Временный текст';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Z1.png' %}";
+
+    button1.onclick = id333;
+
+
+
+}
+
+function id333() {
+     playAudio('backgroundAudioKN2');
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> На Украину зашел крупнейший НАТОвский контингент из 350 тысяч солдат.</p>';
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button2.style.display='none';
+
+    button1.innerHTML = 'А через три месяца ';
+    button2.innerHTML = 'Кн: Временный текст';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/ZE3.png' %}";
+
+    button1.onclick = id444;
+
+}
+
+function id444() {
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundAudioAvtomat');
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Президента Украины расстреливают прямо у Верховной Рады.</p>';
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.style.display='block';
+    button2.style.display='block';
+
+    button1.innerHTML = 'Отрицать любую причастность к убийству';
+    button2.innerHTML = 'Категорически отрицать причастность к убийству';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Poro2.png' %}";
+
+    button1.onclick = id555;
+    button2.onclick = id555;
+
+}
+
+function id555() {
+    stopAudio('backgroundAudioAvtomat');
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundAudioGRU');
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> ЦРУ заявляет стрелявший в президента выронил телефон в котором был контакт резидента ГРУ. Страны запада обвинили Россию в политическом убийстве и объявляют политический бойкот </p>';
+
+    // Изменяем текст в кнопках
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.style.display='block';
+    button2.style.display='block';
+
+    button1.innerHTML = 'Выразить крайнюю озабоченность';
+    button2.innerHTML = 'Категорически отрицать причастность к убийству';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Pauer.png' %}";
+
+    button1.onclick = id666;
+    button2.onclick = id666;
+}
+
+function id666() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundAudioGRU');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    //playAudio('backgroundAudioSuper');
+    playAudio('backgroundAudioUD14');
+
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p>США и Европейский Союз ввели безпрециндетные политические и экономические санкции против РФ призванные нанести ущерб сопоставимый с военным поражением.   </p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+
+
+    // Изменяем текст кнопок
+    button1.innerHTML = 'Выступить по ТВ и объявить о неизбежном массированном термоядерном ударе по России.';
+    button2.innerHTML = 'Понадеяться на чуло.';
+
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'none'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/ev0.png' %}";
+
+
+
+    setTimeout(() => {
+    id777();
+}, 14000); // 10000 миллисекунд = 10 секунд
+
+
+    setTimeout(() => {
+        mainImage.src = "{% static 'main/img/ev1.png' %}";
+
+        setTimeout(() => {
+            mainImage.src = "{% static 'main/img/ev2.png' %}";
+
+            setTimeout(() => {
+                mainImage.src = "{% static 'main/img/ev3.png' %}";
+
+                setTimeout(() => {
+                    mainImage.src = "{% static 'main/img/ev4.png' %}";
+
+                    setTimeout(() => {
+                        mainImage.src = "{% static 'main/img/ev5.png' %}";
+                    }, 1900); // Задержка в 2 секунды для W4
+
+                }, 2000); // Задержка в 2 секунды для W3
+
+            }, 2000); // Задержка в 2 секунды для W2
+
+        }, 2000); // Задержка в 3 секунды для W1
+
+    }, 1000); // Начинаем сразу для W0
+}
+
+
+
+function id777() {
+    stopAudio('backgroundAudioAvtomat');
+    stopAudio('backgroundAudioUD14');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Затем НАТО заблокировал воды Черных и Балтийских морей, перекрыл любые грузоперевозки через западную границу </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Смириться с блокадой и гигантскими экономическими потерями';
+    button2.innerHTML = 'Дать команду на прорыв блокады, так как это Casus belli ';
+    button1.style.display='block';
+    button2.style.display='block';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Tovar.png' %}";
+
+    button1.onclick = id6666;
+    button2.onclick = id888;
+}
+
+function id888() {
+    stopAudio('backgroundAudioAvtomat');
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundAudioAt20');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Ракетные комплексы "Бал" уничтожили военно морские группировки НАТО в Черном и Балтийском морях </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Предостеречь от эскалации';
+    button2.innerHTML = 'Дать команду на прорыв блокады, так как это Casus belli ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/udar2.png' %}";
+
+    button1.onclick = id999;
+    //button2.onclick = id999;
+}
+
+function id999() {
+    stopAudio('backgroundAudioAt20');
+    stopAudio('backgroundAudioAvtomat');
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundAudioSuper');
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Эсминцы Arleigh Burke, находясь за 2000 км и вне зоны дальности русских береговых комплексов "Бал", уничтожили крылатыми ракетами Tomahawk выявленные с помощью спутниковой группировки НАТО противокорабельные системы. </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Анализ ситуации от Управления Разведки МО РФ';
+    button2.innerHTML = 'Даrtyrytryrty ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/usa3.png' %}";
+
+    button1.onclick = id1000;
+    //button2.onclick = id666;
+}
+function id1000() {
+    stopAudio('backgroundAudioAvtomat');
+    stopAudio('backgroundAudioSuper');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Принять вынужденное решение';
+    button2.innerHTML = 'Даrtyrytryrty ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Doc.png' %}";
+
+    button1.onclick = id1001;
+    //button2.onclick = id666;
+}
+
+function id1001() {
+    stopAudio('backgroundAudioAvtomat');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> По мирному договору с НАТО Россия должна: Отказаться от военного флота на Балтике и Черном Море. Фиксация цены нефти не дороже 60$. Провести выборы президента в 2018 под контролем мирового сообщества </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'А на выборах 2018 года победил ...';
+    button2.innerHTML = 'Даrtyrytryrty ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/pis2.png' %}";
+
+    button1.onclick = id1002;
+    //button2.onclick = id666;
+}
+
+function id1002() {
+    stopAudio('backgroundAudioAvtomat');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> После победы прозападного президента в России наступили новые смутные времена.... </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'О проекте';
+    button2.innerHTML = 'Даrtyrytryrty ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Naval.png' %}";
+
+    button1.onclick = id1003;
+    //button2.onclick = id666;
+}
+
+function id1003() {
+
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundkl1');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> Для замечаний и предложений по сценариям тлг @X101. Для желающих поддержать проект и помочь с оплатой хостинга есть QR код для перевода на официальный счет ИП автора проекта.</p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'О проекте';
+    button2.innerHTML = 'Даrtyrytryrty ';
+    button1.style.display='none';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Ya1.png' %}";
+
+    //button1.onclick = id1003;
+    //button2.onclick = id666;
+}
+function idz222() {
+
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundRa22');
+
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> На выборах президента Украины, под присмотром русской армии победил Олег Царев. Запaд выборы не признал, формируется правительство в изгнании во главе с неким комиком Зеленским. Неразогнанная оппозиция снова вывела людей на майдан с требованием вывести войска и переиграть выборы  </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Пресечь беспорядки ';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Ra.png' %}";
+
+    button1.onclick = idz333;
+    //button2.onclick = id666;
+}
+function idz333() {
+    stopAudio('backgroundRa22');
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundmix')
+
+    const featuresText = document.getElementById('featuresText')
+    featuresText.innerHTML = '<p> Три Т-80 Кантемировской дивизии тремя холостыми разогнали пьяную массовку на майдане-4. Однако, нейтрализовать влияние ЛОМов, западных СМИ и спецслужб не удалось.</p>';
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = ' Поэтому месяц спустя... ';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Tan.png' %}";
+
+    button1.onclick = idz444;
+    //button2.onclick = id666;
+
+}
+    function idz444() {
+    stopAudio('backgroundmix')
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundzel1');
+
+
+    const featuresText = document.getElementById('featuresText')
+    featuresText.innerHTML = '<p> Зеленский из Польши призвал к всеобщей забастовке на Украине. Переcтали работать жизнеобеспечивающие предприятия. Остановлены частные грузоперевозки. Банки под угрозой санкций приостанавливают денежные операции. Экономика мгновенно рухнула...Население обвинило РФ в экономической катастрофе</p>';
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Начать экономическое донорство в экономику Украины  ';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Zel.png' %}";
+
+    button1.onclick = idz555;
+    //button2.onclick = id666;
+
+}
+
+    function idz555() {
+    stopAudio('backgroundzel1')
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText')
+    featuresText.innerHTML = '<p> Хорошо организованные и информированные группы местного населения  пускают под откос эшелоны с продовольствием из РФ. Уничтожают коммуникации, путепроводы, электроподстанции, общественный и спец транспорт. Население запугано малочисленными, но радикальными активистами из местных, задачей которых является экономический паралич Украины  </p>';
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'А через три недели после начала работы гуманитарных поставок на Украину... ';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/pzd1.png' %}";
+
+    button1.onclick = idz666;
+    //button2.onclick = id666;
+
+}
+    function idz666() {
+    //stopAudio('backgroundmix')
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundvzrx');
+
+
+    const featuresText = document.getElementById('featuresText')
+    featuresText.innerHTML = '<p> Происходят взрывы на нефте-газопроводах. Первые иски от Евросоюза за недопоставку углеводородов превышают 20 миллиардов долларов. Население Украины продолжает экономический саботаж   </p>';
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Провести в РФ мобилизацию 700 тысяч человек для взятия под контроль всей страны';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/VZR.png' %}";
+
+    button1.onclick = idz777;
+    //button2.onclick = id666;
+
+}
+
+    function idz777() {
+    stopAudio('backgroundvzrx')
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundtolpa13');
+
+
+
+    const featuresText = document.getElementById('featuresText')
+    featuresText.innerHTML = '<p> Призвать 700 тысяч солдат в Русскую армию в короткие сроки не удается. На Украине, в следствие экономического саботажа населения  начинаются первые голодные бунты  </p>';
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'В ООН в отношении России.... ';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/gol.png' %}";
+
+    button1.onclick = idz888;
+    //button2.onclick = id666;
+
+}
+
+        function idz888() {
+    stopAudio('backgroundtolpa13')
+    playAudio('backgroundAudioKN2');
+    playAudio('backgroundSiz');
+
+
+
+    const featuresText = document.getElementById('featuresText')
+    featuresText.innerHTML = '<p> На спец ассамблее ООН страны Запада, Азии и Африки признали РФ агрессором. Президент Китая потребовал прекратить геноцид украинского народа   </p>';
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'В ООН в отношении России.... ';
+    button2.innerHTML = 'err';
+    button1.style.display='block';
+    button2.style.display='none';
+
+
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/sl.png' %}";
+
+    button1.onclick = idz999;
+    //button2.onclick = id666;
+
+}
+
+    function idz999() {
+    // Воспроизводим звук нажатия кнопки
+    stopAudio('backgroundSiz');
+    playAudio('backgroundAudioKN'); // Звук нажатия кнопки
+    //playAudio('backgroundAudioSuper');
+    playAudio('backgroundAudioUD14');
+
+
+    // Изменяем текст в виджете 'featuresText'
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = `
+    <p> США, Индия, Китай и Европа объявили реальный и полный экономический и политический бойкот России. Экономика РФ начала стремительно деградировать   </p>
+    `;
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+
+
+    // Изменяем текст кнопок
+    button1.innerHTML = ' массированном термоядерном удареи.';
+    button2.innerHTML = 'Понадеяться на чуло.';
+
+
+    // Возвращаем видимость всех трех кнопок
+    button1.style.display = 'none'; // Сделать кнопку 1 видимой
+    button2.style.display = 'none';
+
+
+    // Изменяем изображение
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Blok1.png' %}";
+
+
+
+    setTimeout(() => {
+    idz1000();
+}, 14000); // 10000 миллисекунд = 10 секунд
+
+
+    setTimeout(() => {
+        mainImage.src = "{% static 'main/img/Blok2.png' %}";
+
+        setTimeout(() => {
+            mainImage.src = "{% static 'main/img/Blok3.png' %}";
+
+            setTimeout(() => {
+                mainImage.src = "{% static 'main/img/Blok4.png' %}";
+
+                setTimeout(() => {
+                    mainImage.src = "{% static 'main/img/Blok5.png' %}";
+
+                    setTimeout(() => {
+                        mainImage.src = "{% static 'main/img/Fin2018.png' %}";
+                    }, 1700); // Задержка в 2 секунды для W4
+
+                }, 1900); // Задержка в 2 секунды для W3
+
+            }, 2000); // Задержка в 2 секунды для W2
+
+        }, 2000); // Задержка в 3 секунды для W1
+
+    }, 1000); // Начинаем сразу для W0
+}
+
+    function idz1000() {
+    stopAudio('backgroundAudioUD14');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> К выборам 2018 года Россия подошла с рекордной инфляцией из 90х, полугодовыми невыплатами зарплат и падением уровня жизни до стран третьего мира </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = 'Подать в отставку ';
+    button2.innerHTML = 'Идти на выборы ';
+    button1.style.display='block';
+    button2.style.display='block';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/x23.png' %}";
+
+    button1.onclick = idz1001;
+    button2.onclick = idz1001;
+}
+
+    function idz1001() {
+    stopAudio('backgroundAudioUD14');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> На выборах 2018 года победил вороватый представитель запада и беглый олигарх-зэк. Россия начала погружаться в Бироновщину-2 </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = ' О проекте ';
+    button2.innerHTML = ' ';
+    button1.style.display='block';
+    button2.style.display='None';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Hod.png' %}";
+
+    button1.onclick = id1003;
+    button2.onclick = id1003;
+}
+
+       function id6666() {
+    stopAudio('backgroundAudioUD14');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> К 2018 году ВВП России рекордно рухнул. В стране снова появилась нищета, безработица и мощная преступность. Власть потеряла влияние и авторитет.  </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = ' На выборах 2018 победил... ';
+    button2.innerHTML = 'Идти на выборы ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/fin.png' %}";
+
+    button1.onclick = idz6666;
+    button2.onclick = idz1001;
+}
+    function idz6666() {
+    stopAudio('backgroundAudioUD14');
+    playAudio('backgroundAudioKN2');
+
+
+    const featuresText = document.getElementById('featuresText');
+    featuresText.innerHTML = '<p> В 2018 после победы Собчак в страну вернулись времена Анны Иоановны: Относительная суверенная политика, бесконечные пышные праздники и шоу, вялые экономические реконструкции и противостояние с Китаем, к войне с которым Россия начала стремительно приближаться. </p>';
+
+
+    const button1 = document.getElementById('1');
+    const button2 = document.getElementById('2');
+    button1.innerHTML = ' О проекте';
+    button2.innerHTML = 'Идти на выборы ';
+    button1.style.display='block';
+    button2.style.display='none';
+
+    // Получаем элемент с id 'mainImage' и меняем его источник
+    const mainImage = document.getElementById('mainImage');
+    mainImage.src = "{% static 'main/img/Sob.png' %}";
+
+    button1.onclick = id1003;
+    button2.onclick = idz1001;
+}
+
+</script>
+
+{% endblock %}
+
+

@@ -1,0 +1,45 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/img/' %}">
+<!--    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
+</head>
+<body>
+
+    <aside>
+        <h3></h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="icon-compass"></i>  Симулятор ЕТ-538</li></a>
+            <a href="{% url 'about' %}"><li><i class="icon-male"></i>  СВО 2014 - исторический симулятор</li></a>
+            <a href="{% url 'uan4' %}"><li><i class="icon-compass"></i> О проекте СВО 2014 </li></a>
+<!--            <a href=""><li><i class="icon-archive"></i>Контакты</li></a>-->
+        </ul>
+
+
+    </aside>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block content1 %}
+    {% endblock %}
+
+    <script>
+
+
+</script>
+
+
+
+</body>
+</html>

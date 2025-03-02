@@ -1,0 +1,338 @@
+{% extends 'main/layout.html' %}
+ {% load static %}
+
+{% block title %}ETMY(Ru){% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Аналоговая рация ЕТ-538 ETMY </h1>
+    <p>Интерактивная схема работы рации. </p>
+
+</div>
+
+<div class="image-row">
+     <div class="image-col">
+         <img src="{% static 'main/img/0.png' %}" alt="Image 1">
+     </div>
+
+     <div class="button-container">
+        <button class="invisible-btn new-width" onclick="replaceImage()"></button>
+     </div>
+</div>
+
+<div class="f5">
+        <a href="https://www.ozon.ru/product/ratsiya-moshchnaya-10-vt-vodonepronitsaemaya-analogovaya-dlya-raboty-etmy-et-538-1597686406/?__rr=2">OZON</a>
+</div>
+
+
+<div class="button-container2">
+    <button class="invisible-btn new-width" onclick="replaceImage2()">
+
+    </button>
+</div>
+
+<div class="indicator-col">
+    <img src="{% static 'main/img/indi.png' %}" alt="Indicator" style="display: none;">
+</div>
+
+
+
+<audio id="audio0" src="{% static 'main/audio/vkl.mp3' %}" ></audio>
+<audio id="audio1" src="{% static 'main/audio/1.wav' %}" ></audio>
+<audio id="audio2" src="{% static 'main/audio/2.wav' %}" ></audio>
+<audio id="audio3" src="{% static 'main/audio/3.wav' %}" ></audio>
+<audio id="audio4" src="{% static 'main/audio/4.wav' %}" ></audio>
+<audio id="audio5" src="{% static 'main/audio/5.wav' %}" ></audio>
+<audio id="audio6" src="{% static 'main/audio/6.wav' %}" ></audio>
+<audio id="audio7" src="{% static 'main/audio/7.wav' %}" ></audio>
+<audio id="audio8" src="{% static 'main/audio/8.wav' %}" ></audio>
+<audio id="audio9" src="{% static 'main/audio/9.wav' %}" ></audio>
+<audio id="audio10" src="{% static 'main/audio/10.wav' %}" ></audio>
+<audio id="audio11" src="{% static 'main/audio/11.wav' %}" ></audio>
+<audio id="audio12" src="{% static 'main/audio/12.wav' %}" ></audio>
+<audio id="audio13" src="{% static 'main/audio/13.wav' %}" ></audio>
+<audio id="audio14" src="{% static 'main/audio/14.wav' %}" ></audio>
+<audio id="audio15" src="{% static 'main/audio/15.wav' %}" ></audio>
+<audio id="audio16" src="{% static 'main/audio/16.wav' %}" ></audio>
+
+
+<script>
+    let descriptorPosition = 1;
+    const images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png', '14.png', '15.png', '16.png'];
+
+    const images2 = "{% static 'main/img/indi.png' %}";
+    const images3 = "{% static 'main/img/indi2.png' %}";
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let indicatorTimer = null; // Переменная для хранения идентификатора таймера
+
+function loadIndicator() {
+    var indicator = document.querySelector('.indicator-col img');
+
+    if (indicator.style.display === "none") {
+        indicator.style.display = "block";
+    } else {
+        indicator.style.display = "none";
+    }
+
+    // Устанавливаем таймер для вызова loadIndicator через 500 миллисекунд
+    indicatorTimer = setTimeout(loadIndicator, 500);
+}
+function stopLoadIndicator() {
+    // Если есть активный таймер, очищаем его
+    if (indicatorTimer) {
+        clearTimeout(indicatorTimer);
+        indicatorTimer = null; // Сбрасываем переменную таймера
+    }
+    var indicator = document.querySelector('.indicator-col img');
+    indicator.style.display = "none";
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    let count = 1;
+    let currentAudio = null; // Эта переменная будет хранить текущий воспроизводимый аудиофайл
+
+    function stopAllAudio() {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null; // Обнуляем переменную после остановки аудио
+
+    }
+}
+    function playRandomAudio() {
+        const audioFiles = [
+    '{% static "main/audio/f6.mp3" %}', '{% static "main/audio/f8.mp3" %}',
+    '{% static "main/audio/Po1.mp3" %}', '{% static "main/audio/poezd2.mp3" %}', '{% static "main/audio/poezd3.mp3" %}',
+    '{% static "main/audio/poezd7.mp3" %}', '{% static "main/audio/Pol2.mp3" %}', '{% static "main/audio/Pol3.mp3" %}',
+    '{% static "main/audio/Pol4.mp3" %}', '{% static "main/audio/Pol5.mp3" %}', '{% static "main/audio/Pol6.mp3" %}',
+    '{% static "main/audio/pom2.mp3" %}', '{% static "main/audio/qwe.mp3" %}', '{% static "main/audio/qwe1.mp3" %}',
+    '{% static "main/audio/qwe2.mp3" %}', '{% static "main/audio/qwe3.mp3" %}', '{% static "main/audio/re.mp3" %}',
+    '{% static "main/audio/re0.mp3" %}', '{% static "main/audio/re1.mp3" %}', '{% static "main/audio/re2.mp3" %}',
+    '{% static "main/audio/re3.mp3" %}', '{% static "main/audio/re5.mp3" %}', '{% static "main/audio/re6.mp3" %}',
+    '{% static "main/audio/re8.mp3" %}', '{% static "main/audio/real1.mp3" %}', '{% static "main/audio/real2.mp3" %}',
+    '{% static "main/audio/real3.mp3" %}', '{% static "main/audio/real4.mp3" %}', '{% static "main/audio/real5.mp3" %}',
+    '{% static "main/audio/real6.mp3" %}', '{% static "main/audio/real7.mp3" %}', '{% static "main/audio/Rer1.mp3" %}',
+    '{% static "main/audio/Rer2.mp3" %}', '{% static "main/audio/Rer3.mp3" %}', '{% static "main/audio/Rer4.mp3" %}',
+    '{% static "main/audio/Rer5.mp3" %}', '{% static "main/audio/Rer6.mp3" %}', '{% static "main/audio/Rer7.mp3" %}',
+    '{% static "main/audio/rp1.mp3" %}', '{% static "main/audio/rp2.mp3" %}', '{% static "main/audio/rp3.mp3" %}',
+    '{% static "main/audio/rp4.mp3" %}', '{% static "main/audio/rp5.mp3" %}', '{% static "main/audio/sek.mp3" %}',
+    '{% static "main/audio/sek2.mp3" %}', '{% static "main/audio/sek3.mp3" %}', '{% static "main/audio/sek4.mp3" %}',
+    '{% static "main/audio/sek5.mp3" %}', '{% static "main/audio/sos.mp3" %}', '{% static "main/audio/sos2.mp3" %}',
+    '{% static "main/audio/sos3.mp3" %}', '{% static "main/audio/sp0.mp3" %}', '{% static "main/audio/sp1.mp3" %}',
+    '{% static "main/audio/sp3.mp3" %}', '{% static "main/audio/sp4.mp3" %}', '{% static "main/audio/sp6.mp3" %}',
+    '{% static "main/audio/sp7.mp3" %}', '{% static "main/audio/sp8.mp3" %}', '{% static "main/audio/sp9.mp3" %}',
+    '{% static "main/audio/sp10.mp3" %}', '{% static "main/audio/sp11.mp3" %}', '{% static "main/audio/sp12.mp3" %}',
+    '{% static "main/audio/sp13.mp3" %}', '{% static "main/audio/sp14.mp3" %}', '{% static "main/audio/sp15.mp3" %}',
+    '{% static "main/audio/f3.mp3" %}', '{% static "main/audio/f15.mp3" %}', '{% static "main/audio/f5.mp3" %}',
+    '{% static "main/audio/f2.mp3" %}', '{% static "main/audio/f7.mp3" %}', '{% static "main/audio/f1.mp3" %}',
+    '{% static "main/audio/f9.mp3" %}', '{% static "main/audio/f10.mp3" %}', '{% static "main/audio/f11.mp3" %}',
+    '{% static "main/audio/MW1.mp3" %}', '{% static "main/audio/MW2.mp3" %}', '{% static "main/audio/MW3.mp3" %}',
+    '{% static "main/audio/MW4.mp3" %}', '{% static "main/audio/MW5.mp3" %}', '{% static "main/audio/ne0.mp3" %}',
+    '{% static "main/audio/ne1.mp3" %}', '{% static "main/audio/ne2.mp3" %}', '{% static "main/audio/ne3.mp3" %}',
+    '{% static "main/audio/pir23.mp3" %}', '{% static "main/audio/pir24.mp3" %}', '{% static "main/audio/pir25.mp3" %}',
+    '{% static "main/audio/ne4.mp3" %}', '{% static "main/audio/o1.mp3" %}', '{% static "main/audio/ne10.mp3" %}',
+    '{% static "main/audio/o2.mp3" %}', '{% static "main/audio/o3.mp3" %}', '{% static "main/audio/o4.mp3" %}',
+    '{% static "main/audio/o5.mp3" %}', '{% static "main/audio/o6.mp3" %}', '{% static "main/audio/o7.mp3" %}',
+    '{% static "main/audio/o8.mp3" %}', '{% static "main/audio/o9.mp3" %}', '{% static "main/audio/o10.mp3" %}',
+    '{% static "main/audio/o11.mp3" %}', '{% static "main/audio/o12.mp3" %}', '{% static "main/audio/o13.mp3" %}',
+    '{% static "main/audio/o14.mp3" %}', '{% static "main/audio/o15.mp3" %}', '{% static "main/audio/016.mp3" %}',
+    '{% static "main/audio/o17.mp3" %}', '{% static "main/audio/o18.mp3" %}', '{% static "main/audio/okr1.mp3" %}',
+    '{% static "main/audio/oxr.mp3" %}', '{% static "main/audio/oxr4.mp3" %}', '{% static "main/audio/oxr12.mp3" %}',
+    '{% static "main/audio/pir26.mp3" %}', '{% static "main/audio/pir27.mp3" %}', '{% static "main/audio/pir28.mp3" %}',
+    '{% static "main/audio/pir20.mp3" %}', '{% static "main/audio/pir21.mp3" %}', '{% static "main/audio/pir22.mp3" %}',
+    '{% static "main/audio/oxr1.mp3" %}', '{% static "main/audio/oxr19.mp3" %}', '{% static "main/audio/oxr33.mp3" %}',
+    '{% static "main/audio/f14.mp3" %}', '{% static "main/audio/f4.mp3" %}', '{% static "main/audio/f16.mp3" %}'];
+        const randomIndex = Math.floor(Math.random() * audioFiles.length);
+        const randomAudioFile = audioFiles[randomIndex];
+
+        currentAudio = new Audio(randomAudioFile); // Сохраняем текущий аудиофайл в переменной currentAudio
+        currentAudio.addEventListener('ended', function() {
+            stopLoadIndicator(); // Останавливаем индикатор когда аудио заканчивается
+            stopAllAudio(); // Останавливаем все аудио
+        });
+
+        currentAudio.play();
+        loadIndicator();
+
+        }
+
+    function replaceImage() {
+        const currentImage = document.querySelector('.image-col img');
+
+        if (descriptorPosition === 1) {
+            currentImage.src = "{% static 'main/img/1.png' %}";
+            currentAudio = document.getElementById("audio0"); // Сохраняем аудио в переменной currentAudio
+
+            currentAudio.play();
+            currentAudio.addEventListener('ended', playRandomAudio);
+
+            descriptorPosition = 2;
+
+        } else if (descriptorPosition === 2) {
+            currentImage.src = "{% static 'main/img/0.png' %}";
+            stopAllAudio(); // Останавливаем воспроизведение всех аудиофайлов
+            stopLoadIndicator(); // Останавливаем индикатор
+            descriptorPosition = 1;
+            count = 0;
+        }
+    }
+
+    function replaceImage2() {
+        if (descriptorPosition === 2) {
+            count += 1;
+            if (count > 16) {
+                count = 1; // переключение на первый канал
+        }
+            anotherFunction(count, document.querySelector('.image-col img'));
+    }
+}
+
+    let intervalId;
+    function anotherFunction(count, currentImage) {
+        if (count === 1) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/1.png' %}";
+            currentAudio = document.getElementById("audio1");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+
+        } else if (count === 2) {
+        stopAllAudio();
+        stopLoadIndicator(); // Останавливаем индикатор
+        currentImage.src = "{% static 'main/img/2.png' %}";
+        currentAudio = document.getElementById("audio2"); // Сохраняем аудио в переменной currentAudio
+        currentAudio.addEventListener('ended', playRandomAudio);
+        currentAudio.play();
+
+
+        } else if (count === 3) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/3.png' %}";
+            currentAudio = document.getElementById("audio3");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 4) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/4.png' %}";
+            currentAudio = document.getElementById("audio4");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 5) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/5.png' %}";
+            currentAudio = document.getElementById("audio5");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 6) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/6.png' %}";
+            currentAudio = document.getElementById("audio6");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 7) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/7.png' %}";
+            currentAudio = document.getElementById("audio7");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+
+        } else if (count === 8) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/8.png' %}";
+            currentAudio = document.getElementById("audio8");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 9) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/9.png' %}";
+            currentAudio = document.getElementById("audio9");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+
+        } else if (count === 10) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/10.png' %}";
+            currentAudio = document.getElementById("audio10");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+
+        } else if (count === 11) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/11.png' %}";
+            currentAudio = document.getElementById("audio11");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 12) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/12.png' %}";
+            currentAudio = document.getElementById("audio12");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 13) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/13.png' %}";
+            currentAudio = document.getElementById("audio13");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+
+        } else if (count === 14) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/14.png' %}";
+            currentAudio = document.getElementById("audio14");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+        } else if (count === 15) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/15.png' %}";
+            currentAudio = document.getElementById("audio15");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+
+                                             
+        } else if (count === 16) {
+            stopAllAudio();
+            stopLoadIndicator(); // Останавливаем индикатор
+            currentImage.src = "{% static 'main/img/16.png' %}";
+            currentAudio = document.getElementById("audio16");
+            currentAudio.addEventListener('ended', playRandomAudio);
+            currentAudio.play();
+        }
+
+    }
+</script>
+{% endblock %}
+
+*/        // Добавляем таймер, который вызовет playRandomAudio через 30 секунд
+*/        //intervalId = setInterval(function() {
+*/        //    playRandomAudio();
+*/        //         }, 30000);

@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %} СВО {% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1> СВО - Интерактивный симулятор новейшей истории </h1>
+    <p>  </p>
+
+    <div class="img-container">
+        <img src="{% static 'main/img/Mat.png' %}" alt="Image 1" style="max-width: 100%; height: auto;">
+    </div>
+
+    <div class="button-container3">
+        <button class="btn btn-primary" onclick="window.location.href='{% url 'uan' %}'"">Начать что бы изменить историю</button>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
