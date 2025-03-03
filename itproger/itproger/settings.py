@@ -1,4 +1,5 @@
 from pathlib import Path
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8y#qlzg^2$^9x6kn7rbh$$0rhgb5sh517*y*j#$g6(n!msqj3h'
