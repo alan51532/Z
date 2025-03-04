@@ -2,9 +2,9 @@ from pathlib import Path
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-8y#qlzg^2$^9x6kn7rbh$$0rhgb5sh517*y*j#$g6(n!msqj3h'
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
 
 INSTALLED_APPS = [
     'main',
@@ -46,6 +46,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432', cast=int),
     }
 }
 
